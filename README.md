@@ -35,6 +35,25 @@ This module does not come bundled with the node.js version as it can occasionall
 
 Compass [(Ruby install)](http://compass-style.org/install/) does not have a node.js port, so to use SASS and Compass together, Ruby SASS must be used.
 
+To install compass: `$ gem install compass`
+
+After that you can add compass features by adding `@import "compass"` into your sass/scss file;
+That's all. Just restart your server by command `$ mimosa watch --server` or `$ mimosa watch -s`
+
+### Bourbon
+
+You can also use [Bourbon](http://bourbon.io/).
+
+To install it: `$ gem install bourbon`.
+
+After that you need to type: `bourbon install` in your stylesheets directory (by defult it's "assets/stylesheets/"; it may be configurable in your `mimosa-config` file).
+
+To watch and compile your changes you need to run: `sass --watch sass_directory:css_directory` where `sass_directory` - your sass folder path; `sass_directory` - css output folder path.
+
+By default it will look like: `$ sass --watch assets/stylesheets/:public/stylesheets`.
+
+After that you can simply add bourbon features into your sass/scss file by adding: `@import "bourbon/bourbon"`
+
 ## Source Maps
 
 If using node-sass, this module includes support for inline (dynamic) source maps.  Source maps will be created for your compiled sass file and included at the bottom of the compiled CSS.  This is enabled by default for `mimosa watch`.  `mimosa build` is presumed to not be a dev time task, therefore source maps are disabled.
